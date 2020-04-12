@@ -55,8 +55,8 @@
                     </div>
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
+                        <a href="https://mobile.twitter.com/Tobbynho2/with_replies"><i class="ti-twitter-alt"></i></a>
+                        <a href="https://www.instagram.com/tobbynhostitches"><i class="ti-instagram"></i></a>
                         <a href="#"><i class="ti-pinterest"></i></a>
                     </div>
                 </div>
