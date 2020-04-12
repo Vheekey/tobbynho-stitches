@@ -65,32 +65,62 @@
             <div class="single-hero-items set-bg" data-setbg="img/sample2.JPG">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
+                        <div class="col-lg-5 text-white">
+                            <span>adire the new vogue</span>
+                            <h1 style="color: white">Realize your dream design </h1>
+                            <p>You order, we deliver </p>
+                            <p>Give us your dream design, we make it a reality </p>
+                            <a href="#" class="primary-btn">Order Now</a>
                         </div>
                     </div>
-                    <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
-                    </div>
+                    
                 </div>
             </div>
-            <div class="single-hero-items set-bg" data-setbg="img/sample1.JPG">
+            <div class="single-hero-items set-bg" data-setbg="img/sample3.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
+                            
                         </div>
                     </div>
                     <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
+                        <h2>Sales <span>On</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-items set-bg" data-setbg="img/sample4.jpeg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Sales <span>On</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-items set-bg" data-setbg="img/sample5.jpeg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Sales <span>On</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-items set-bg" data-setbg="img/sample6.jpeg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Sales <span>On</span></h2>
                     </div>
                 </div>
             </div>
@@ -249,38 +279,9 @@
     <!-- Women Banner Section End -->
 
     <!-- Deal Of The Week Section Begin-->
-    <section class="deal-of-week set-bg spad" data-setbg="img/time-bg.jpg">
-        <div class="container">
-            <div class="col-lg-6 text-center">
-                <div class="section-title">
-                    <h2>Deal Of The Week</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
-                        consectetur adipisicing elit </p>
-                    <div class="product-price">
-                        $35.00
-                        <span>/ HanBag</span>
-                    </div>
-                </div>
-                <div class="countdown-timer" id="countdown">
-                    <div class="cd-item">
-                        <span>56</span>
-                        <p>Days</p>
-                    </div>
-                    <div class="cd-item">
-                        <span>12</span>
-                        <p>Hrs</p>
-                    </div>
-                    <div class="cd-item">
-                        <span>40</span>
-                        <p>Mins</p>
-                    </div>
-                    <div class="cd-item">
-                        <span>52</span>
-                        <p>Secs</p>
-                    </div>
-                </div>
-                <a href="#" class="primary-btn">Shop Now</a>
-            </div>
+    <section class="deal-of-week set-bg spad" data-setbg="img/sample7.png">
+        <div class="container" style="min-height:450px">
+            
         </div>
     </section>
     <!-- Deal Of The Week Section End -->
@@ -404,42 +405,43 @@
 
     <!-- Instagram Section Begin -->
     <div class="instagram-photo">
-        <div class="insta-item set-bg" data-setbg="img/insta-1.jpg">
+        <div class="insta-item set-bg" data-setbg="img/pix1.jpeg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="https://www.instagram.com/explore/tags/tobbynhostitches/top/">@tobbynhostitches</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-2.jpg">
+        <div class="insta-item set-bg" data-setbg="img/pix3.jpeg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="https://www.instagram.com/explore/tags/tobbynhostitches/top/">@tobbynhostitches</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-3.jpg">
+        <div class="insta-item set-bg" data-setbg="img/pix2.jpeg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="https://www.instagram.com/explore/tags/tobbynhostitches/top/">@tobbynhostitches</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-4.jpg">
+        <div class="insta-item set-bg" data-setbg="img/pix4.jpeg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="https://www.instagram.com/explore/tags/tobbynhostitches/top/">@tobbynhostitches</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-5.jpg">
+        <div class="insta-item set-bg" data-setbg="img/pix5.jpg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="https://www.instagram.com/explore/tags/tobbynhostitches/top/">@tobbynhostitches</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-6.jpg">
+        <div class="insta-item set-bg" data-setbg="img/pix6.jpeg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="https://www.instagram.com/explore/tags/tobbynhostitches/top/">@tobbynhostitches</a></h5>
             </div>
         </div>
+       
     </div>
     <!-- Instagram Section End -->
 
