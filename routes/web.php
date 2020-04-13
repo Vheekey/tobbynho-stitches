@@ -16,9 +16,8 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/index', function () {
-    return view('index');
-});
+Auth::routes();
+
 Route::get('/shop', function () {
     return view('shop');
 });
@@ -28,9 +27,19 @@ Route::get('/faq', function () {
 Route::get('/product', function () {
     return view('product');
 });
-Route::get('/login', function () {
-    return view('login');
+Route::get('/admin', function () {
+    return view('admin');
 });
-Route::get('/register', function () {
-    return view('register');
+Route::get('/contact', function () {
+    return view('contact');
 });
+Route::get('/product-details', function () {
+    return view('product-details');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

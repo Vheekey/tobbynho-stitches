@@ -16,7 +16,7 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="{{ url('/index') }}" >Home</a></li>
+                        <li class="active"><a href="{{ url('/') }}" >Home</a></li>
                         <li><a href="{{ url('/shop') }}">Shop</a></li>
                         <li><a href="#">Customize Order</a> </li>
                         <li><a href="{{ url('/contact') }}">Contact</a></li>
@@ -108,6 +108,18 @@
                     </div>
                     <div class="off-card">
                         <h2>Sales <span>On</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-items set-bg" data-setbg="img/samples.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Craft <span>Now</span></h2>
                     </div>
                 </div>
             </div>
@@ -438,39 +450,7 @@
     </section>
     <!-- Latest Blog Section End -->
 
-    <!-- Partner Logo Section Begin -->
-    <div class="partner-logo">
-        <div class="container">
-            <div class="logo-carousel owl-carousel">
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-1.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-2.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-3.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-4.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-5.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Partner Logo Section End -->
+    
 
     @include('footer')
 

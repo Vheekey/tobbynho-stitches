@@ -8,16 +8,15 @@
                             <a href="#"><img src="img/footer-logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 6 Ronke Street, Itire Lagos</li>
+                            <li>Address: 6 Ronke Street, Itire. Lagos</li>
                             <li>Phone: +234 8090930067, +234 7083866618</li>
                             <li>Email: <a href="mailto:oluwatobi.ajasa1@gmail.com?Subject=Order" target="_top">oluwatobi.ajasa1@gmail.com</a>
                             </li>
                         </ul>
                         <div class="footer-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="https://m.facebook.com/tobbynho.stitches"><i class="fa fa-facebook"></i></a>
                             <a href="https://www.instagram.com/tobbynhostitches"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://mobile.twitter.com/Tobbynho2/with_replies"><i class="fa fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -25,10 +24,10 @@
                     <div class="footer-widget">
                         <h5>Information</h5>
                         <ul>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="{{ url('/about') }}">About Us</a></li>
                             <li><a href="#">Checkout</a></li>
                             <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
+                            <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -61,7 +60,7 @@
                     <div class="col-lg-12">
                         <div class="copyright-text">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://" target="_blank">Vheekey</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
                         <div class="payment-pic">
