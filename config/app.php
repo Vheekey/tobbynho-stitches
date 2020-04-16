@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://adire-app.herokuapp.com'),
+    'url' => env('APP_URL', 'https://adire-app.herokuapp.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
