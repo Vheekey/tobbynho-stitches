@@ -50,7 +50,7 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
 ########### Vendor Routes ############################
     //vendor login and register page
     Route::get('vendor/signup',  function () {
-        return view('Auth\vendor');
+        return view('auth\vendor');
     });
      
     //vendor register
@@ -81,7 +81,7 @@ Route::prefix('/vendor')->name('vendor.')->namespace('Vendor')->middleware('vend
     
     //Admin View (Register and Login
     Route::get('/admin/sign', function(){
-        return view('Auth\admin');
+        return view('auth\admin');
     });
 
     //admin register
