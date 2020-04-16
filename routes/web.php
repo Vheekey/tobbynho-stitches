@@ -81,7 +81,7 @@ Route::prefix('/vendor')->name('vendor.')->namespace('Vendor')->middleware('vend
     
     //Admin View (Register and Login
     Route::get('/admin/sign', function(){
-        return view('auth\admin');
+        return view('auth.admin');
     });
 
     //admin register
