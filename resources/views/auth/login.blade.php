@@ -6,7 +6,7 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="{{ url('/index') }}">Home</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="{{ url('/shop') }}">Shop</a></li>
                         <li><a href="{{ url('/contact') }}">Contact</a></li>
                         <li><a href="#">Login</a>

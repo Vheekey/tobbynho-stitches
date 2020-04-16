@@ -1,11 +1,11 @@
-@include('header')
+@include('headerless')
 <div class="nav-item">
             <div class="container">
                 <div class="nav-depart">                    
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="{{ url('/index') }}">Home</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="{{ url('/shop') }}">Shop</a></li>                        
                         <li><a href="{{ url('/contact') }}">Contact</a></li>
                         <li><a href="#">Password Reset</a>
@@ -52,8 +52,7 @@
                         @endif
                         <form method="POST" action="{{ route('password.email') }}">
                         @csrf
-                            <input type="hidden" name="token" value="{{ $token }}">
-
+                            
                             <div class="group-input">
                                 <label for="username">{{ __('E-Mail Address') }} *</label>
                                 <div class="">
@@ -84,16 +83,16 @@
 
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.zoom.min.js"></script>
-    <script src="js/jquery.dd.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.zoom.min.js"></script>
+    <script src="../js/jquery.dd.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

@@ -1,45 +1,23 @@
-@include('header')    
+@include('headerless')  
 @include('flashmessage')
+
 <div class="nav-item">
             <div class="container">
-                <div class="nav-depart">
-                    <div class="depart-btn">
-                        <i class="ti-menu"></i>
-                        <span>All </span>
-                        <ul class="depart-hover">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">Register</a></li>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Shop</a></li>
-                            <li><a href="#">Customize & Order</a></li>                            
-                        </ul>
-                    </div>
-                </div>
+                
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li class="active"><a href="{{ url('/') }}" >Home</a></li>
-                        <li><a href="{{ url('/shop') }}">Shop</a></li>
-                        <li><a href="#">Customize Order</a> </li>
-                        <li><a href="{{ url('/contact') }}">Contact</a></li>
-                        <li><a href="{{ url('/faq') }}">Faq</a></li>
-                        @if(\Auth::guest())
-                        <li><a href="#">Login</a>
-                            <ul class="dropdown">
-                                
-                                <li><a href="{{ url('/register') }}">Register</a></li>
-                                <li><a href="{{ url('/login') }}">Login</a></li>
-                                <li><a href="{{ url('/vendor/signup') }}">Become a Vendor</a></li>
-                            </ul>
-                        </li>
-                       
-                        @else <li><a href="/logout">Logout</a></li> @endif
+                        <li><a href="{{ url('/vendor/manage') }}">Manage Products</a></li>
+                        
+                        @if(\Auth::guard('vendor'))
+                       <li><a href="/vendor/logout">Logout</a></li> @endif
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
             </div>
         </div>
     </header>    
-        
+     
 
     <!-- Hero Section Begin -->
     <section class="hero-section">
@@ -461,16 +439,16 @@
     @include('footer')
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.zoom.min.js"></script>
-    <script src="js/jquery.dd.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.zoom.min.js"></script>
+    <script src="../js/jquery.dd.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

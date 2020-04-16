@@ -1,4 +1,6 @@
 @include('header')
+@include('flashmessage')
+
 <div class="nav-item">
             <div class="container">
                 <div class="nav-depart">
