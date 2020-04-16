@@ -50,7 +50,7 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
 ########### Vendor Routes ############################
     //vendor login and register page
     Route::get('vendor/signup',  function () {
-        return view('auth\vendor');
+        return view('auth.vendor');
     });
      
     //vendor register
