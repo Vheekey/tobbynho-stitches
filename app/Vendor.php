@@ -2,9 +2,10 @@
 
 namespace App;
 
+use App\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable; 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Vendor extends Authenticatable
 {
@@ -23,4 +24,8 @@ class Vendor extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function products(){
+        return $this->belongsTo(Product::class);
+    }
 }

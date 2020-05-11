@@ -34,7 +34,7 @@ class VendorLoginController extends Controller
             return redirect('/vendor/dashboard');                 
         }
         //Authentication failed...
-        return redirect()->back()->with('error', 'Login failed. Kindly confirm credentials') ;
+        return back()->with('error', 'Login failed. Kindly confirm credentials') ;
     }
 
    

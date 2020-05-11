@@ -10,7 +10,7 @@ class AdminLoginController extends Controller
     //
     public function __construct()
     {
-        $this->middleware('guest:admin')->except('adminLogout'); //allow only logout route to access this controller and that is not defined
+        //$this->middleware('guest:admin')->except('adminLogout'); //allow only logout route to access this controller and that is not defined
         
     } 
      
@@ -23,10 +23,10 @@ class AdminLoginController extends Controller
         
         if(\Auth::guard('admin')->attempt(['email' => $request->adminEmail, 'password' => $request->adminPassword], $request->only('adminEmail','adminPassword'),$request->filled('remember'))){
             //Authentication passed...
-            return redirect('/admin/admin');                 
+            return redirect('/admin/admin')->with('success', 'Welcome Admin');                 
         }
         //Authentication failed...
-        return redirect()->back()->with('error', 'Login failed. Kindly confirm credentials') ;
+        return back()->with('error', 'Login failed. Kindly confirm credentials') ;
     }
 
     public function adminLogout(){

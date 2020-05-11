@@ -1,8 +1,9 @@
 @include('headerless')
-@include('flashmessage')
 </header>
     <!-- Header End -->
     <div class="container">
+    @include('flashmessage')
+
             <div class="row mb-5">
                 <div class="col-lg-6 ">
                     <div class="register-form">

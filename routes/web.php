@@ -32,9 +32,9 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
     Route::get('/product', function () {
         return view('product');
     });
-    Route::get('/admin', function () {
-        return view('admin');
-    });
+    // Route::get('/admin', function () {
+    //     return view('admin');
+    // });
     Route::get('/contact', function () {
         return view('contact');
     });
@@ -52,7 +52,7 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
     Route::get('vendor/signup',  function () {
         return view('auth.vendor');
     });
-     
+
     //vendor register
     Route::post('vendor/register','Auth\VendorRegisterController@createVendor');
 
@@ -63,9 +63,21 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
     Route::get('/vendor/logout','Auth\VendorLoginController@vendorLogout')->name('vendor.logout');
 
 Route::prefix('/vendor')->name('vendor.')->namespace('Vendor')->middleware('vendor.auth')->group(function(){
-        
+
     //vendor dashboard
-    Route::get('/dashboard','VendorController@index')->name('dashboard');       
+    Route::get('/dashboard','VendorController@index')->name('dashboard');
+    //vendor products
+    Route::get('/manage','VendorController@products')->name('products');    ##
+    //vendor create products
+    Route::post('/upload','VendorController@createProduct')->name('createProduct');
+    //vendor delete products
+    Route::get('/product/{id}/delete','VendorController@deleteProduct')->name('deleteProduct');
+    //vendor edit products
+    Route::get('/product/{id}/edit','VendorController@editProduct')->name('editProduct');
+    //vendor update products
+    Route::post('/update/{id}/product','VendorController@updateProduct')->name('updateProduct');
+    //vendor orders
+    Route::get('/orders','VendorController@orders')->name('orders');       ##
 
     // //Forgot Password Routes
     // Route::get('/password/reset','ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -73,12 +85,12 @@ Route::prefix('/vendor')->name('vendor.')->namespace('Vendor')->middleware('vend
 
     // //Reset Password Routes
     // Route::get('/password/reset/{token}','ResetPasswordController@showResetForm')->name('password.reset');
-    // Route::post('/password/reset','ResetPasswordController@reset')->name('password.update');   
+    // Route::post('/password/reset','ResetPasswordController@reset')->name('password.update');
 });
 ################### Vendor Routes End############################
-       #############################################                                                             
+       #############################################
 ###################### Admin Routes ############################
-    
+
     //Admin View (Register and Login
     Route::get('/admin/sign', function(){
         return view('auth.admin');
@@ -95,10 +107,27 @@ Route::prefix('/vendor')->name('vendor.')->namespace('Vendor')->middleware('vend
 
     //group admin
     Route::prefix('/admin')->name('admin.')->namespace('Admin')->middleware('admin.auth')->group(function(){
-        
+
         //admin dashboard
-        Route::get('/admin','AdminController@index')->name('admin'); 
-        
-       
-       
+        Route::get('/admin','AdminController@index')->name('admin');
+        //admin faq
+        Route::get('/faq','AdminController@faq')->name('faq');
+        //admin create faq
+        Route::post('/createFaq','AdminController@createFaq')->name('createFaq');
+        //admin delete faq
+        Route::get('/delete/faq/{id}','AdminController@deleteFaq')->name('deleteFaq');
+        //admin edit faq
+        Route::get('/edit/faq/{id}','AdminController@editFaq');
+        //admin products
+        Route::get('/products','AdminController@products')->name('products'); ##
+        //admin customers
+        Route::get('/customers','AdminController@customers')->name('customers');
+        //admin orders
+        Route::get('/orders','AdminController@orders')->name('orders');  ##
+        //delete customer account
+        Route::get('/delete/{id}','AdminController@deleteCustomer')->name('delete');
+
+
+
+
     });
