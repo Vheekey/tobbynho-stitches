@@ -1,2 +1,2 @@
-# adire-stitches
-Laravel app for adire ecommerce site
+# tobbynho-stitches
+Laravel app for an adire ecommerce site
