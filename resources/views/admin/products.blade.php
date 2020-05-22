@@ -17,9 +17,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/admin/products') }}">
+            <a class="nav-link active" href="{{ url('/admin/products') }}">
               <span data-feather="shopping-cart"></span>
-              Products
+              Products <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
@@ -29,9 +29,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{{ url('/admin/faq') }}">
+            <a class="nav-link " href="{{ url('/admin/faq') }}">
               <span data-feather="bar-chart-2"></span>
-              FAQ <span class="sr-only">(current)</span>
+              FAQ
             </a>
           </li>
           <li class="nav-item">
@@ -81,46 +81,38 @@
     @include('flashmessage')
 
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <div class="row">
-            <div class="col-md-4 ">
-              <p> <strong>Create new FAQ </strong> </p>
-                <form action="/admin/createFaq" method="post">
-                    @csrf
-                    <label for="">Question</label>
-                    <input type="text" name="que" id=""><p></p>
-                    <label for="">Answer</label>
-                    <input type="text" name="ans" id=""><p></p>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-7">
-                <?php  $x = 1; ?>
-                <div class="table-responsive">
-                  <table class="table table-striped table-sm">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Question</th>
-                        <th>Answer</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($faq as $faqs)
-                      <tr>
-                        <td><?php echo $x ?></td>
-                        <td><?php echo  $faqs->question ?></td>
-                        <td><?php echo  $faqs->answer ?></td>
-                        <td><a href="/admin/delete/faq/<?php echo $faqs->id; ?>"  class="btn btn-sm btn-danger">Delete</a> <a href="/admin/edit/faq/{{$faqs->id}}" id="<?php echo $faqs->id; ?>" href="" class="edit btn btn-sm btn-info ml-2">Edit</a></td>
-                      </tr>
-                      <?php $x++; ?>
-                     @endforeach
-                    </tbody>
-                  </table>
-                </div>
-                @if(isset($edits)) <?php print_r($edits); ?> @endif
-            </div>
+            <?php $x = 1;  ?>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Material</th>
+                      <th>Description</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($all as $item)
+                    <tr>
+                        <td>{{$x}}</td>
+                        <td>{{$item->product}}</td>
+                        <td>{{$item->material}}</td>
+                        <td>{{$item->description}}</td>
+                        <td>Price: {{$item->price}} <br> Discount: {{$item->discount}}</td>
+                        <td>{{$item->status}}</td>
+                        <td> <a href="/product/{{$item->id}}/details" class="btn btn-sm btn-dark">Details</a> @if($item->status == 'Pending' || $item->status == 'Declined')<a href="/admin/product/{{$item->id}}/approve" class="btn btn-sm btn-success">Approve</a>@endif
+                            @if($item->status == 'Pending' || $item->status == 'Approved')<a href="/admin/product/{{$item->id}}/decline" class="btn btn-sm btn-danger">Decline</a> @endif
+                        </td>
+                    </tr>
+                    <?php $x++; ?>
+                    @endforeach
+
+                  </tbody>
+                </table>
         </div>
 
       </div>
@@ -134,38 +126,6 @@
     <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 
-<script  type="text/javascript">
-  $(document).on('click', '.edit ', function () {
-          var id = this.id;
-          alert(id);
-          $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
-          $.ajax({
-
-              type:'GET',
-
-              url:'/admin/edit/faq/11',
-
-              data:{'id': id,'_token':'{{ csrf_token() }}' },
-              dataType: 'JSON',
-
-              success:function(data){
-                alert(id);
-  console.log('bad');
-                alert(data);
-
-              }
-
-          });
-          alert(id);
-
-
-  });
-</script>
 </body>
 </html>
 

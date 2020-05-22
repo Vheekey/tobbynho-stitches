@@ -1,4 +1,4 @@
-@include('header')    
+@include('header')
 @include('flashmessage')
 <div class="nav-item">
             <div class="container">
@@ -11,7 +11,7 @@
                             <li><a href="#">Register</a></li>
                             <li><a href="#">Login</a></li>
                             <li><a href="#">Shop</a></li>
-                            <li><a href="#">Customize & Order</a></li>                            
+                            <li><a href="#">Customize & Order</a></li>
                         </ul>
                     </div>
                 </div>
@@ -19,27 +19,26 @@
                     <ul>
                         <li class="active"><a href="{{ url('/') }}" >Home</a></li>
                         <li><a href="{{ url('/shop') }}">Shop</a></li>
-                        <li><a href="#">Customize Order</a> </li>
                         <li><a href="{{ url('/contact') }}">Contact</a></li>
                         <li><a href="{{ url('/faq') }}">Faq</a></li>
                         @if(\Auth::guest())
                         <li><a href="#">Login</a>
                             <ul class="dropdown">
-                                
+
                                 <li><a href="{{ url('/register') }}">Register</a></li>
                                 <li><a href="{{ url('/login') }}">Login</a></li>
                                 <li><a href="{{ url('/vendor/signup') }}">Become a Vendor</a></li>
                             </ul>
                         </li>
-                       
+
                         @else <li><a href="/logout">Logout</a></li> @endif
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
             </div>
         </div>
-    </header>    
-        
+    </header>
+
 
     <!-- Hero Section Begin -->
     <section class="hero-section">
@@ -48,11 +47,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            
+
                             <a href="#" class="primary-btn">Shop Now</a>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="single-hero-items set-bg" data-setbg="img/sample2.JPG">
@@ -66,14 +65,14 @@
                             <a href="#" class="primary-btn">Order Now</a>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="single-hero-items set-bg" data-setbg="img/sample3.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            
+
                         </div>
                     </div>
                     <div class="off-card">
@@ -85,7 +84,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            
+
                         </div>
                     </div>
                     <div class="off-card">
@@ -97,7 +96,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            
+
                         </div>
                     </div>
                     <div class="off-card">
@@ -109,7 +108,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            
+
                         </div>
                     </div>
                     <div class="off-card">
@@ -121,7 +120,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            
+
                         </div>
                     </div>
                     <div class="off-card">
@@ -180,13 +179,14 @@
                     <div class="filter-control">
                         <ul>
                             <li class="active">Sample Designs</li>
-                            
+
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel">
+                        @foreach ($prod as $value)
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="img/products/create.jpeg" alt="">
+                                <img src="/storage/{{ $value->productImage }}" alt="">
                                 <div class="sale">Sale</div>
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
@@ -198,65 +198,17 @@
                                 </ul>
                             </div>
                             <div class="pi-text">
-                                <div class="catagory-name">Shirt</div>
+                                <div class="catagory-name">{{ $value->material }}</div>
                                 <a href="#">
-                                    <h5>Pure Pineapple</h5>
+                                    <h5>{{ $value->product }}</h5>
                                 </a>
                                 <div class="product-price">
-                                    &#x20A6;14.00
-                                    <span>&#x20A6;35.00</span>
+                                    &#x20A6;{{ $value->discount }}.00
+                                    <span>&#x20A6;{{ $value->price }}.00</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/pix1.jpeg" alt="">
-                                <div class="sale">Sale</div>
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Shirt</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    &#x20A6;14.00
-                                    <span>&#x20A6;35.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/pix2.jpeg" alt="">
-                                <div class="sale">Sale</div>
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Shirt</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    &#x20A6;14.00
-                                    <span>&#x20A6;35.00</span>
-                                </div>
-                            </div>
-                        </div>
-                      
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -267,7 +219,7 @@
     <!-- Deal Of The Week Section Begin-->
     <section class="deal-of-week set-bg spad" data-setbg="img/sample7.png">
         <div class="container" style="min-height:450px">
-            
+
         </div>
     </section>
     <!-- Deal Of The Week Section End -->
@@ -280,13 +232,14 @@
                     <div class="filter-control">
                         <ul>
                             <li class="active">Customized Designs</li>
-                           
+
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel">
+                        @foreach ($prod as $value)
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="img/products/pix2.jpeg" alt="">
+                                <img src="/storage/{{ $value->productImage }}" alt="">
                                 <div class="sale">Sale</div>
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
@@ -298,65 +251,18 @@
                                 </ul>
                             </div>
                             <div class="pi-text">
-                                <div class="catagory-name">Shirt</div>
+                                <div class="catagory-name">{{ $value->material }}</div>
                                 <a href="#">
-                                    <h5>Pure Pineapple</h5>
+                                    <h5>{{ $value->product }}</h5>
                                 </a>
                                 <div class="product-price">
-                                    &#x20A6;14.00
-                                    <span>&#x20A6;35.00</span>
+                                    &#x20A6;{{ $value->discount }}.00
+                                    <span>&#x20A6;{{ $value->price }}.00</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/pix2.jpeg" alt="">
-                                <div class="sale">Sale</div>
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Shirt</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    &#x20A6;14.00
-                                    <span>&#x20A6;35.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/pix2.jpeg" alt="">
-                                <div class="sale">Sale</div>
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Shirt</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    &#x20A6;14.00
-                                    <span>&#x20A6;35.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        @endforeach
+
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-1">
@@ -408,13 +314,13 @@
                 <h5><a href="https://www.instagram.com/tobbynhostitches/">@tobbynhostitches</a></h5>
             </div>
         </div>
-       
+
     </div>
     <!-- Instagram Section End -->
 
     <!-- Latest Blog Section Begin -->
     <section class="latest-blog spad">
-        <div class="container">            
+        <div class="container">
             <div class="benefit-items">
                 <div class="row">
                     <div class="col-lg-4">
@@ -456,7 +362,7 @@
     </section>
     <!-- Latest Blog Section End -->
 
-    
+
 
     @include('footer')
 

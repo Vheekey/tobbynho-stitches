@@ -30,20 +30,54 @@
                         <label for="">Product Image</label>
                         <input type="file" name="productImage" id="" class="form-control">
 
-                        <label for="">Product Name</label>
+                        <label for="" class="mt-3">Descriptive Image</label>
+                        <input type="file" name="productImage1" id="" class="form-control">
+                        <input type="file" name="productImage2" id="" class="form-control">
+                        <input type="file" name="productImage3" id="" class="form-control">
+                        <input type="file" name="productImage4" id="" class="form-control">
+
+                        <label for="" class="mt-3">Product Name</label>
                         <input type="text" name="product_name" id="" class="form-control">
 
-                        <label for="">Product Material</label>
+                        <label for="" class="mt-3">Product Material</label>
                         <input type="text" name="product_material" id="" class="form-control">
 
-                        <label for="">Product Price</label>
-                        <input type="text" name="price" id="" class="form-control">
+                        <label for="" class="mt-3">Product Price</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">&#x20A6;</span>
+                            </div>
+                            <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest naira)">
+                            <div class="input-group-append">
+                              <span class="input-group-text">.00</span>
+                            </div>
+                          </div>
 
-                        <label for="">Discount Price</label>
-                        <input type="text" name="discount" id="" class="form-control">
+                        <label for="" class="mt-3">Discount Price</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">&#x20A6;</span>
+                            </div>
+                            <input type="text" name="discount" class="form-control" aria-label="Amount (to the nearest naira)">
+                            <div class="input-group-append">
+                              <span class="input-group-text">.00</span>
+                            </div>
+                          </div>
 
-                        <label for="">Product Description</label>
+                        <label for="" class="mt-3">Weight in Kg</label>
+                        <input type="text" value="1" name="weight" id="" class="form-control">
+
+                        <label for="" class="mt-3">Availability</label>
+                        <select name="avail" id="">
+                            <option value="1">In Stock</option>
+                            <option value="0">Out Of Stock</option>
+                        </select>
+
+                        <label for="" class="mt-3">Product Short Description</label>
                         <textarea name="desc" id="" cols="25" rows="10" class="form-control"></textarea>
+
+                        <label for="" class="mt-3">Product Full Description</label>
+                        <textarea name="fullDesc" id="" cols="25" rows="10" class="form-control"></textarea>
                         <p></p>
 
                         <input type="submit" value="Create" class="site-btn">
@@ -75,8 +109,8 @@
                                         <h5>{{ $value->product }}</h5>
                                     </a>
                                     <div class="product-price">
-                                        {{ $value->discount }}
-                                        <span>{{ $value->price }}</span>
+                                        &#x20A6;{{ $value->discount }}
+                                        <span>&#x20A6;{{ $value->price }}</span>
                                     </div>
                                 </div>
                             </div>

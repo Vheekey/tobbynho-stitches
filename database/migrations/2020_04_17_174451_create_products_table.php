@@ -20,10 +20,17 @@ class CreateProductsTable extends Migration
             $table->string('product', 500);
             $table->string('material', 500);
             $table->text('description');
+            $table->text('fullDescription');
             $table->text('productImage');
-            $table->string('price', 200);
+            $table->text('productImage1');
+            $table->text('productImage2');
+            $table->text('productImage3');
+            $table->text('productImage4');
+            $table->integer('price');
+            $table->string('weight', 200);
             $table->string('discount', 200);
             $table->enum('status', ['Approved', 'Pending', 'Declined']);
+            $table->enum('availability', ['1', '0']);
             $table->softDeletes('deleted_at', 0);
             $table->timestamps();
 

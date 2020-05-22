@@ -8,7 +8,7 @@
           <li class="nav-item">
             <a class="nav-link " href="{{ url('/admin/admin') }}">
               <span data-feather="home"></span>
-              Dashboard 
+              Dashboard
             </a>
           </li>
           <li class="nav-item">
@@ -93,7 +93,7 @@
         </div>
       </div>
 <?php $x = 1;  ?>
-        @if (empty($customers)) <p style="color:green; font-weight:bold">You have No Customers </p> 
+        @if (empty($customers)) <p style="color:green; font-weight:bold">You have No Customers </p>
         @else
       <div class="table-responsive">
         <table class="table table-striped table-sm">
@@ -112,11 +112,11 @@
               <td><?php echo $x; ?></td>
               <td><?php echo $customer->name ?></td>
               <td><?php echo $customer->email ?></td>
-              <td><a href="{{ url('/admin/delete/'.$id)}}" class="btn btn-sm btn-danger">Delete</a></td>
+              <td><a href="{{ url('/admin/delete/'.$id)}}" class="btn btn-sm btn-danger">Delete Account</a></td>
             </tr>
             <?php $x++; ?>
            @endforeach
-          
+
           </tbody>
         </table>
       </div>

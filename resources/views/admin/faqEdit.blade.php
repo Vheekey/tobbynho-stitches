@@ -1,4 +1,4 @@
-@include('admin/adminheader')
+@include('admin/adminheaderless')
 <div class="container-fluid">
   <div class="row">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -79,47 +79,23 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     @include('flashmessage')
-
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <div class="row">
-            <div class="col-md-4 ">
-              <p> <strong>Create new FAQ </strong> </p>
-                <form action="/admin/createFaq" method="post">
+            <div class="col-md-8">
+                <p>
+                    <a href="/admin/faq" class="btn btn-sm btn-dark">Back</a>
+                </p>
+                <p> <strong>Edit FAQ </strong> </p>
+              @foreach ($data as $item)
+                <form action="/admin/faq/{{$item->id}}/editFaq" method="post">
                     @csrf
                     <label for="">Question</label>
-                    <input type="text" name="que" id=""><p></p>
+                    <input type="text" name="que" id="" class="form-control" value="{{$item->question}}"><p></p>
                     <label for="">Answer</label>
-                    <input type="text" name="ans" id=""><p></p>
+                    <input type="text" name="ans" id="" class="form-control" value="{{$item->answer}}"><p></p>
                     <input type="submit" value="Submit">
                 </form>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-7">
-                <?php  $x = 1; ?>
-                <div class="table-responsive">
-                  <table class="table table-striped table-sm">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Question</th>
-                        <th>Answer</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($faq as $faqs)
-                      <tr>
-                        <td><?php echo $x ?></td>
-                        <td><?php echo  $faqs->question ?></td>
-                        <td><?php echo  $faqs->answer ?></td>
-                        <td><a href="/admin/delete/faq/<?php echo $faqs->id; ?>"  class="btn btn-sm btn-danger">Delete</a> <a href="/admin/edit/faq/{{$faqs->id}}" id="<?php echo $faqs->id; ?>" href="" class="edit btn btn-sm btn-info ml-2">Edit</a></td>
-                      </tr>
-                      <?php $x++; ?>
-                     @endforeach
-                    </tbody>
-                  </table>
-                </div>
-                @if(isset($edits)) <?php print_r($edits); ?> @endif
+                @endforeach
             </div>
         </div>
 
@@ -133,39 +109,6 @@
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-
-<script  type="text/javascript">
-  $(document).on('click', '.edit ', function () {
-          var id = this.id;
-          alert(id);
-          $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
-          $.ajax({
-
-              type:'GET',
-
-              url:'/admin/edit/faq/11',
-
-              data:{'id': id,'_token':'{{ csrf_token() }}' },
-              dataType: 'JSON',
-
-              success:function(data){
-                alert(id);
-  console.log('bad');
-                alert(data);
-
-              }
-
-          });
-          alert(id);
-
-
-  });
-</script>
 </body>
 </html>
 

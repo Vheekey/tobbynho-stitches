@@ -13,9 +13,7 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
 |
 */
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', 'HomeController@index');
 
     \Auth::routes();
 
@@ -23,9 +21,9 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
             Auth::logout();
             return redirect('/');
     });
-    Route::get('/shop', function () {
-        return view('shop');
-    });
+    Route::get('/shop', 'HomeController@shop');
+    Route::get('/product/customize/{id}', 'HomeController@customize')->middleware('auth');
+    Route::get('/product/{id}/details', 'HomeController@details');
     Route::get('/faq', function () {
         return view('faq');
     });
@@ -116,10 +114,16 @@ Route::prefix('/vendor')->name('vendor.')->namespace('Vendor')->middleware('vend
         Route::post('/createFaq','AdminController@createFaq')->name('createFaq');
         //admin delete faq
         Route::get('/delete/faq/{id}','AdminController@deleteFaq')->name('deleteFaq');
+        //admin get faq for edit
+        Route::get('/edit/faq/{id}','AdminController@getFaq');
         //admin edit faq
-        Route::get('/edit/faq/{id}','AdminController@editFaq');
+        Route::post('/faq/{id}/editFaq','AdminController@editFaqs');
         //admin products
-        Route::get('/products','AdminController@products')->name('products'); ##
+        Route::get('/products','AdminController@products')->name('products');
+        //admin approve products
+        Route::get('product/{id}/approve','AdminController@approveProducts')->name('approveProducts');
+        //admin decline products
+        Route::get('product/{id}/decline','AdminController@declineProducts')->name('declineProducts');
         //admin customers
         Route::get('/customers','AdminController@customers')->name('customers');
         //admin orders
