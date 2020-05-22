@@ -12,13 +12,13 @@ class AdminController extends Controller
     //
     public function index(){
         $all = Product::where("status",'=',"Pending")->get();
-        return view('admin.admin', compact('all'))->with('success', 'You are logged in as a Admin');
+        return view('admin/admin', compact('all'))->with('success', 'You are logged in as a Admin');
     }
 
     //view customers
     public function customers(){
         $customers = \DB::table('users')->get();
-        return view('admin.customers', compact('customers'));
+        return view('admin/customers', compact('customers'));
     }
 
     //delete customer account
@@ -30,7 +30,7 @@ class AdminController extends Controller
     //admin view faq
     public function faq(){
         $faq = \DB::table('faqs')->get();
-        return view('admin.faq', compact('faq'));
+        return view('admin/faq', compact('faq'));
     }
 
     //admin create faq
@@ -50,7 +50,7 @@ class AdminController extends Controller
     //admin get faq
     public function getFaq($id){
         $data = \DB::table('faqs')->where('id', $id)->get();
-        return view('admin.faqEdit', compact('data'));
+        return view('admin/faqEdit', compact('data'));
     }
 
     //admin edit faq
@@ -62,7 +62,7 @@ class AdminController extends Controller
     //admin manage products
     public function products(){
         $all = Product::paginate(100);
-        return view('admin.products', compact('all'));
+        return view('admin/products', compact('all'));
     }
 
     //admin approve products
