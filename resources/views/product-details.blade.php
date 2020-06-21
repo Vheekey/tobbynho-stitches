@@ -82,6 +82,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
+                            @include('flashmessage')
+
                             <div class="product-details">
                                 <div class="pd-title">
                                     <span>{{ $details->material }}</span>
@@ -100,31 +102,35 @@
                                     <p>{{ $details->description }}</p>
                                     <h4>&#x20A6;{{ $details->discount }} <span>&#x20A6;{{ $details->price }}</span></h4>
                                 </div>
+                                <form action="/add" method="post">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $details->id }}">
+                                    <div class="pd-size-choose">
+                                        <div class="sc-item">
+                                            <input type="radio" value="s" name="size" id="sm-size">
+                                            <label for="sm-size">s</label>
+                                        </div>
+                                        <div class="sc-item">
+                                            <input type="radio" value="m" name="size" id="md-size">
+                                            <label for="md-size">m</label>
+                                        </div>
+                                        <div class="sc-item">
+                                            <input type="radio" value="l" name="size" id="lg-size">
+                                            <label for="lg-size">l</label>
+                                        </div>
+                                        <div class="sc-item">
+                                            <input type="radio" value="xs" name="size" id="xl-size">
+                                            <label for="xl-size">xs</label>
+                                        </div>
+                                    </div>
+                                    <div class="quantity">
+                                        <div class="pro-qty">
+                                            <input type="text" value="1" placeholder="1" name="quantity">
+                                        </div>
+                                        <input type="submit" class="primary-btn pd-cart" value="Add To Cart">
+                                    </div>
+                                </form>
 
-                                <div class="pd-size-choose">
-                                    <div class="sc-item">
-                                        <input type="radio" name="size" id="sm-size">
-                                        <label for="sm-size">s</label>
-                                    </div>
-                                    <div class="sc-item">
-                                        <input type="radio" name="size" id="md-size">
-                                        <label for="md-size">m</label>
-                                    </div>
-                                    <div class="sc-item">
-                                        <input type="radio" name="size" id="lg-size">
-                                        <label for="lg-size">l</label>
-                                    </div>
-                                    <div class="sc-item">
-                                        <input type="radio" name="size" id="xl-size">
-                                        <label for="xl-size">xs</label>
-                                    </div>
-                                </div>
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1" placeholder="1" name="quantity">
-                                    </div>
-                                    <a href="#" class="primary-btn pd-cart">Add To Cart</a>
-                                </div>
                                 <div class="pd-share">
                                     <div class="p-code">Sku : {{ $details->sku }}</div>
                                     <div class="pd-social">
@@ -193,7 +199,19 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td class="p-catagory">Material</td>
+                                                <td>
+                                                    <div class="p-weight">{{ $details->material }}</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td class="p-catagory">Weight</td>
+                                                <td>
+                                                    <div class="p-weight">{{ $details->weight }}kg</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-catagory">Category</td>
                                                 <td>
                                                     <div class="p-weight">{{ $details->weight }}kg</div>
                                                 </td>

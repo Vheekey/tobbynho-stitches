@@ -26,6 +26,10 @@ class Vendor extends Authenticatable
     ];
 
     public function products(){
-        return $this->belongsTo(Product::class);
+        return $this->belongsToMany(Product::class);
+    }
+
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 }

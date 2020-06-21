@@ -44,6 +44,7 @@ class VendorController extends Controller
         $product->price = $request->price;
         $product->discount = $request->discount;
         $product->weight = $request->weight;
+        $product->category = $request->category;
         $product->availability = $request->avail;
         $product->status = "Pending";
         // return $product;
@@ -82,7 +83,8 @@ class VendorController extends Controller
             if(!empty($request->file('newImages4'))) $product->productImage4 = $request->file('newImages4')->store('productImages', 'public');
             $product->price = $request->newPrice;
             $product->discount = $request->newDiscount;
-            $product->availability = $request->avail;
+            if(!empty($request->avail)) $product->availability = $request->avail;
+            if(!empty($request->newCategory)) $product->category = $request->newCategory;
 
             // return $request;
 

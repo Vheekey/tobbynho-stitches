@@ -67,6 +67,17 @@
                         <label for="" class="mt-3">Weight in Kg</label>
                         <input type="text" value="1" name="weight" id="" class="form-control">
 
+                        <label for="" class="mt-3">Category</label>
+                        <select name="category" id="">
+                            <option value="throw-pillow">Throw Pillow</option>
+                            <option value="shirt">Shirt</option>
+                            <option value="top">Top</option>
+                            <option value="polo">Polo</option>
+                            <option value="skirt">Skirt</option>
+                            <option value="trouser">Trouser</option>
+                            <option value="cardigan/jacket">Cardigan/Jacket</option>
+                            <option value="short">Shorts</option>
+                        </select>
                         <label for="" class="mt-3">Availability</label>
                         <select name="avail" id="">
                             <option value="1">In Stock</option>
@@ -105,6 +116,7 @@
                                 </div>
                                 <div class="pi-text">
                                     <div class="catagory-name">{{ $value->material }}</div>
+                                    <div class="catagory-name">{{ $value->category }}</div>
                                     <a href="#">
                                         <h5>{{ $value->product }}</h5>
                                     </a>

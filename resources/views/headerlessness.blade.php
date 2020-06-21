@@ -86,53 +86,56 @@
                                 </a>
                             </li>
                             <li class="cart-icon"><a href="#">
-                                    <i class="icon_bag_alt"></i>
-                                    <span>3</span>
-                                </a>
-                                <div class="cart-hover">
-                                    <div class="select-items">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="/img/select-product-1.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="/img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
-                                    </div>
-                                    <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                    </div>
+                                <i class="icon_bag_alt"></i>
+                                <span id="count"></span>
+                            </a>
+                            <div class="cart-hover">
+                                <div class="select-button">
+                                    <a href="/shopping-cart" class="primary-btn view-card">VIEW CARD</a>
+                                    <a href="/checkout" class="primary-btn checkout-btn">CHECK OUT</a>
                                 </div>
-                            </li>
+                                <div class="select-items">
+                                    <table>
+                                        <tbody>
+                                            <div id="cartons"></div>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="select-total" id="select-total"></div>
+                            </div>
+                        </li>
                             <li class="cart-price">$150.00</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script
+        src="https://code.jquery.com/jquery-3.3.0.min.js"
+        integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4="
+        crossorigin="anonymous"></script>
+
+<script>
+toUpper = function(x){
+  return x.toUpperCase();
+};
+console.log("giant")
+$.ajax({
+  type: 'GET',
+  url: '/cart',
+  success: function (data) {
+      console.log(data);
+      var total = 0;
+      $.each(data,function(index,value){
+        const size = value.size.toUpperCase();
+        total += value.total
+        $("#cartons").append('<tr><td class="si-pic"><img src="/storage/'+value.image+'" alt=""></td><td class="si-text"><div class="product-selected"><p>&#x20A6;'+value.cost+'.00 x'+value.quantity +' ( '+size +' )</p><h6>'+value.name+'</h6></br></div></td><td class="si-close"><a href="/cart/remove/'+value.product_id+'"><i class="fa fa-close"></i></a></td></tr>');
+        });
+
+        $("#select-total").append('<span>total:</span><h5>&#x20A6;'+total+'</h5>');
+        $("#count").append(data.length);
+    }
+
+  });
+</script>

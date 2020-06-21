@@ -22,7 +22,9 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
             return redirect('/');
     });
     Route::get('/shop', 'HomeController@shop');
-    Route::get('/product/customize/{id}', 'HomeController@customize')->middleware('auth');
+    Route::post('/add', 'HomeController@addToCartUncustomized');
+    Route::get('/cart', 'HomeController@displayCart');
+    Route::get('/product/customize/{id}', 'HomeController@customize');
     Route::get('/product/{id}/details', 'HomeController@details');
     Route::get('/faq', function () {
         return view('faq');
@@ -41,6 +43,12 @@ if(App::environment('production')) {     URL::forceScheme('https'); }
     });
     Route::get('/about', function () {
         return view('about');
+    });
+    Route::get('/shopping-cart', function () {
+        return view('shopping-cart');
+    });
+    Route::get('/carton', function () {
+        return view('card-cart');
     });
     Route::get('/home', 'HomeController@index')->name('home');
 

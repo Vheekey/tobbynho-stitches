@@ -52,6 +52,7 @@
                     <label for="">Product Material</label>
                     <input type="text" name="newMaterial" class="form-control" id="" value="{{$product->material}}">
                 </p>
+
                 <p>
                     <label for="">Product Price</label>
                     <div class="input-group">
@@ -88,6 +89,20 @@
                     <label for="">Weight</label>
                     <input type="text" name="newWeight" class="form-control" id="" value="{{$product->weight}}">
                 </p>
+                <p>
+                    <label for="">Category</label>
+                    <select name="newCategory" id="">
+                        <option value="throw-pillow" {!! $product['category'] == 'throw-pillow' ? "selected='selected'" : "" !!}>Throw Pillow</option>
+                        <option value="shirt" {!! $product['category'] == 'shirt' ? "selected='selected'" : "" !!}>Shirt</option>
+                        <option value="top" {!! $product['category'] == 'top' ? "selected='selected'" : "" !!}>Top</option>
+                        <option value="polo" {!! $product['category'] == 'polo' ? "selected='selected'" : "" !!}>Polo</option>
+                        <option value="skirt" {!! $product['category'] == 'skirt' ? "selected='selected'" : "" !!}>Skirt</option>
+                        <option value="trouser" {!! $product['category'] == 'trouser' ? "selected='selected'" : "" !!}>Trouser</option>
+                        <option value="cardigan/jacket" {!! $product['category'] == 'cardigan/jacket' ? "selected='selected'" : "" !!}>Cardigan/Jacket</option>
+                        <option value="short" {!! $product['category'] == 'short' ? "selected='selected'" : "" !!}>Shorts</option>
+                    </select>
+                </p>
+
                 <p>
                     <label for="">Availability</label>
                     <select name="avail" id="">
